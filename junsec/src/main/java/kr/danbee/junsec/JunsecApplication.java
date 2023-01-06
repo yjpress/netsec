@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class JunsecApplication {
 
 	public static void main(String[] args) {
-		//git test
+		//git test2
 		SpringApplication.run(JunsecApplication.class, args);
 	}
 
