@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:fragment="menuFragment">
+	<div class="box-wrap" style="margin-top: 0px;">
+		<span th:if="${session.username != null}"><a
+			th:href="@{/member-logout}"
+			th:text="${session.username}+'님 로그인 하였습니다 | 로그아웃'"></a></span> <span
+			th:unless="${session.username != null}"><a
+			th:href="@{/login-form-view}" th:text="로그인"></a></span> <span><a
+			th:href="@{/add-member-view}"><img
+				th:src="@{/bookpt/img/member-enterance-img.gif}"
+				src="/bookpt/img/member-enterance-img.gif" alt="회원가입22" /></a></span>
+
+		<!-- 				<a th:href="@{~/(lang=ko)}" href="/?lang=ko"><button -->
+		<!-- 				th:text="#{lang.ko}"></button></a> <a th:href="@{~/(lang=en)}" -->
+		<!-- 			href="/?lang=en"><button th:text="#{lang.en}"></button></a> -->
+	</div>
+	<div id="header">
+
+		<div class="login-member">
+						<div class = "box-wrap">
+							<span th:if="${session.username != null}"><a th:href="@{/member-logout}" th:text="${session.username}+'님 로그인 하였습니다 | 로그아웃'" ></a></span> 
+
+							<span th:unless="${session.username != null}"><a th:href="@{/login-form-view}" th:text="로그인"></a></span> 
+
+							<span><a th:href="@{/add-member-view}" ><img th:src="@{/bookpt/img/member-enterance-img.gif}" src="/bookpt/img/member-enterance-img.gif" alt="회원가입22" /></a></span>		
+
+							<a th:href="@{~/(lang=ko)}" href="/?lang=ko"><button th:text="#{lang.ko}"></button></a> 
+							<a th:href="@{~/(lang=en)}" href="/?lang=en"><button th:text="#{lang.en}"></button></a>
+						</div>
+			<div id="top_header" class="top_header">
+				<div class="logo">
+					<a th:herf="@{/}" href="/"><img
+						th:src="@{/bookpt/img/bookpt-logo.png}" alt="북프린테크" /></a>
+				</div>
+			</div>
+
+
+		</div>
+
+
+
+
+		<div id="top_menu">
+			<div class="menu">
+				<ul class="top_daph1">
+					<li><a th:href="@{/}">HOME</a></li>
+					<li><a th:href="@{ceogreeting}">회사소개 ▼</a>
+						<ul class="top_daph2 top_daph2_1">
+							<li style="margin-left: 90px"><a th:href="@{ceogreeting}"
+								href="ceogreeting">· 인사말</a></li>
+							<li><a th:href="@{about}">· 북프린테크소개</a></li>
+							<li><a th:href="@{made_est}" href="made_est">· 맞춤견적 이용안내</a></li>
+							<li><a th:href="@{companypath}" href="companypath">·
+									찾아오시는길</a></li>
+						</ul></li>
+					<li><a href="#">자동견적 주문 ▼</a>
+						<ul class="top_daph2 top_daph2_2">
+							<li>
+								<dl>
+									<dt>&nbsp;</dt>
+									<dd>
+										<a href="#">&nbsp;</a>
+									</dd>
+									<dd>
+										<a href="#">&nbsp;</a>
+									</dd>
+									<dd>
+										<a href="#">&nbsp;</a>
+									</dd>
+									<dd>
+										<a href="#">&nbsp;</a>
+									</dd>
+									<dd>
+										<a href="#">&nbsp;</a>
+									</dd>
+								</dl>
+							</li>
+							<li>
+								<dl>
+									<dt>&nbsp;</dt>
+									<dd>
+										<a href="#">&nbsp;</a>
+									</dd>
+									<dd>
+										<a href="#">&nbsp;</a>
+									</dd>
+									<dd>
+										<a href="#">&nbsp;</a>
+									</dd>
+									<dd>
+										<a href="#">&nbsp;</a>
+									</dd>
+									<dd>
+										<a href="#">&nbsp;</a>
+									</dd>
+								</dl>
+							</li>
+							<li>
+								<dl>
+									<dt>&nbsp;</dt>
+									<dd>
+										<a href="#">&nbsp;</a>
+									</dd>
+									<dd>
+										<a href="#">&nbsp;</a>
+									</dd>
+									<dd>
+										<a href="#">&nbsp;</a>
+									</dd>
+									<dd>
+										<a href="#">&nbsp;</a>
+									</dd>
+									<dd>
+										<a href="#">&nbsp;</a>
+									</dd>
+								</dl>
+							</li>
+							<li>
+								<dl>
+									<dt>옵셋인쇄</dt>
+									<dd>
+										<a th:href="@{/net_print_form_view(name='book', type='est1')}">·
+											서적종합인쇄</a>
+									</dd>
+									<dd>
+										<a th:href="@{/net_print_form_view(name='pam', type='est1')}">·
+											표지인쇄</a>
+									</dd>
+									<dd>
+										<a th:href="@{/net_print_form_view(name='pam', type='est1')}">·
+											낱장인쇄</a>
+									</dd>
+									<!-- 									<dd> -->
+									<!-- 										<a th:href="@{/net_print_form_view(name='book', type='est1')}">· -->
+									<!-- 											전시 도록인쇄</a> -->
+									<!-- 									</dd> -->
+									<dd>
+										<a th:href="@{/net_print_form_view(name='cada', type='est1')}">·
+											카다로그인쇄</a>
+									</dd>
+								</dl>
+							</li>
+							<!-- 							<li> -->
+							<!-- 								<dl> -->
+							<!-- 									<dt>옵셋인쇄</dt> -->
+							<!-- 									<dd> -->
+							<!-- 										<a th:href="@{/net_print_form_view(name='pam', type='est1')}">· -->
+							<!-- 											표지인쇄</a> -->
+							<!-- 									</dd> -->
+							<!-- 									<dd> -->
+							<!-- 										<a th:href="@{/net_print_form_view(name='pam', type='est1')}">· -->
+							<!-- 											본문인쇄</a> -->
+							<!-- 									</dd> -->
+							<!-- 									<dd> -->
+							<!-- 										<a th:href="@{/net_print_form_view(name='pam', type='est1')}">· -->
+							<!-- 											팜플렛</a> -->
+							<!-- 									</dd> -->
+							<!-- 									<dd> -->
+							<!-- 										<a th:href="@{/net_print_form_view(name='pam', type='est1')}">· -->
+							<!-- 											포스타</a> -->
+							<!-- 									</dd> -->
+							<!-- 								</dl> -->
+							<!-- 							</li> -->
+							<li>
+								<dl>
+									<dt>디지탈 인쇄</dt>
+									<dd>
+										<a
+											th:href="@{/net_print_form_view(name='digBook', type='est1')}">·
+											디지탈서적인쇄</a>
+									</dd>
+									<!-- 									<dd><a href="print?idf=2221&names=podbook">· 학회지</a></dd> -->
+<!-- 									<dd> -->
+<!-- 										<a -->
+<!-- 											th:href="@{/net_print_form_view(name='digBook', type='est1')}">· -->
+<!-- 											학위논문</a> -->
+<!-- 									</dd> -->
+									<dd>
+										<a
+											th:href="@{/net_print_form_view(name='digPam', type='est1')}">·
+											표지인쇄</a>
+									</dd>
+									<dd>
+										<a
+											th:href="@{/net_print_form_view(name='digPam', type='est1')}">·
+											낱장인쇄</a>
+									</dd>
+								</dl>
+							</li>
+							<!-- 							<li> -->
+							<!-- 								<dl> -->
+							<!-- 									<dt>마스타 인쇄</dt> -->
+							<!-- 									<dd> -->
+							<!-- 										<a href="print?idf=2310&names=masbook">· 마스터 서적인쇄</a> -->
+							<!-- 									</dd> -->
+							<!-- 									<dd> -->
+							<!-- 										<a href="print?idf=2311&names=masbook">· 마스터 학회지</a> -->
+							<!-- 									</dd> -->
+							<!-- 									<dd> -->
+							<!-- 										<a href="print?idf=2311&names=masbook">· 마스터 학위논문</a> -->
+							<!-- 									</dd> -->
+							<!-- 									<dd> -->
+							<!-- 										<a href="print?idf=2311&names=masbook">· 마스터 논문집</a> -->
+							<!-- 									</dd> -->
+							<!-- 									<dd> -->
+							<!-- 										<a href="print?idf=2311&names=masbook">· 마스터 보고서</a> -->
+							<!-- 									</dd> -->
+							<!-- 									<dd> -->
+							<!-- 										<a href="print?idf=2311&names=masbook">· 마스터 제안서</a> -->
+							<!-- 									</dd> -->
+							<!-- 									<dd> -->
+							<!-- 										<a href="print?idf=2332&names=masyang">· 마스터 양식인쇄</a> -->
+							<!-- 									</dd> -->
+							<!-- 								</dl> -->
+							<!-- 							</li> -->
+							<!-- 							<li> -->
+							<!-- 								<dl> -->
+							<!-- 									<dt>명함 인쇄</dt> -->
+							<!-- 									<dd> -->
+							<!-- 										<a href="bisCard?idf=24010&names=art">· 아트지명함(코팅)</a> -->
+							<!-- 									</dd> -->
+							<!-- 									<dd> -->
+							<!-- 										<a href="bisCard?idf=24021&names=art">· 아트지명함(무코팅)</a> -->
+							<!-- 									</dd> -->
+							<!-- 									<dd> -->
+							<!-- 										<a href="bisCard?idf=24032&names=ban">· 반누브(수입지)</a> -->
+							<!-- 									</dd> -->
+							<!-- 									<dd> -->
+							<!-- 										<a href="bisCard?idf=24043&names=hi">· 휘라레(수입지)</a> -->
+							<!-- 									</dd> -->
+							<!-- 									<dd> -->
+							<!-- 										<a href="bisCard?idf=24054&names=grace">· 그레이스(수입지)</a> -->
+							<!-- 									</dd> -->
+							<!-- 									<dd> -->
+							<!-- 										<a href="bisCard?idf=24065&names=mesh">· 메쉬멜로우(수입지)</a> -->
+							<!-- 									</dd> -->
+							<!-- 									<dd> -->
+							<!-- 										<a href="bisCard?idf=24076&names=yupo">· 유포지(수입지)</a> -->
+							<!-- 									</dd> -->
+							<!-- 									<dd> -->
+							<!-- 										<a href="bisCard?idf=24087&names=star">· 스타드럼(수입지)</a> -->
+							<!-- 									</dd> -->
+							<!-- 								</dl> -->
+							<!-- 							</li> -->
+						</ul></li>
+
+					<li><a href="#">종이 광장 ▼</a>
+						<ul class="top_daph2 top_daph2_2">
+							<li>
+								<dl>
+									<dt>&nbsp;</dt>
+									<dd>
+										<a href="#">&nbsp;</a>
+									</dd>
+									<dd>
+										<a href="#">&nbsp;</a>
+									</dd>
+									<dd>
+										<a href="#">&nbsp;</a>
+									</dd>
+									<dd>
+										<a href="#">&nbsp;</a>
+									</dd>
+									<dd>
+										<a href="#">&nbsp;</a>
+									</dd>
+								</dl>
+							</li>
+
+							<li style="margin-left: 145px">
+								<dl>
+									<dt>고급용지</dt>
+									<dd>
+										<a href="paperPlaza?type=rejak">· 레자크지</a>
+									</dd>
+									<dd>
+										<a href="paperPlaza?type=tant">· 탄트지</a>
+									</dd>
+									<dd>
+										<a href="paperPlaza?type=premium">· 하이크림</a>
+									</dd>
+									<dd>
+										<a href="paperPlaza?type=premium">· 랑데뷰</a>
+									</dd>
+									<dd>
+										<a href="paperPlaza?type=premium">· 몽블랑</a>
+									</dd>
+									<dd>
+										<a href="paperPlaza?type=premium">· 이매진</a>
+									</dd>
+								</dl>
+							</li>
+							<li>
+								<dl>
+									<dt>&nbsp;</dt>
+									<dd>
+										<a href="paperPlaza?type=premium">· 아트지</a>
+									</dd>
+									<dd>
+										<a href="paperPlaza?type=premium">· 스노우지</a>
+									</dd>
+									<dd>
+										<a href="paperPlaza?type=raid">· 레이드지</a>
+									</dd>
+									<dd>
+										<a href="paperPlaza?type=sak">· 색지</a>
+									</dd>
+									<dd>
+										<a href="paperPlaza?type=album">· 앨범지</a>
+									</dd>
+								</dl>
+							</li>
+							<li>
+								<dl>
+									<dt>일반용지</dt>
+									<dd>
+										<a href="paperPlaza?type=general">· 중질지</a>
+									</dd>
+									<dd>
+										<a href="paperPlaza?type=general">· 미색모조지</a>
+									</dd>
+									<dd>
+										<a href="paperPlaza?type=general">· 백상지</a>
+									</dd>
+									<dd>
+										<a href="paperPlaza?type=general">· 뉴플러스미색</a>
+									</dd>
+
+								</dl>
+							</li>
+							<li>
+								<dl>
+									<dt>&nbsp;</dt>
+									<dd>
+										<a href="paperPlaza?type=general">· 매트지백색</a>
+									</dd>
+									<dd>
+										<a href="paperPlaza?type=general">· 매트지자연색</a>
+									</dd>
+									<dd>
+										<a href="paperPlaza?type=general">· 라이언코트지</a>
+									</dd>
+
+								</dl>
+							</li>
+						</ul></li>
+
+					<li><a href="portfolio">북카바갤러리</a> <!-- 						<ul class="top_daph2 top_daph2_4"> -->
+						<!-- 							<li><a href="#">· 일반도서</a></li> --> <!-- 							<li><a href="#">· 논문집표지</a></li> -->
+						<!-- 							<li><a href="#">· 보고서표지</a></li> --> <!-- 						</ul> -->
+					</li>
+
+					<li><a href="#">고객센터▼</a>
+						<ul class="top_daph2 top_daph2_2" style="text-align: right;">
+
+							<li style="margin-left: 50px"><a th:href="@{/board-list-view}" href="board-list-view">·
+									공지사항</a></li>
+
+							<!-- <li><a th:href="@{/myPage}" href="myPage">· My Page</a></li> -->
+							<li><a th:href="@{/contactus}" href="contactus">· 맞춤견적</a></li>
+							<li><a th:href="@{/qna-list}" href="qna-list">· 질의응답</a></li>
+
+							<!-- 									<li><a th:href="@{/qna-list}" href="qna-list">· -->
+							<!-- 									커뮤니티</a></li> -->
+							<!-- 							<li><a th:href="@{/searchid}" href="searchid">· -->
+							<!-- 									아이디/비밀번호찾기</a></li> -->
+							<!-- 							<li><a href="bbs">· gesipan</a></li> -->
+							<li style="margin-left: 1px"><a href="member-sujung-form">회원정보수정</a>
+							</li>
+							<li style="margin-left: 1px"><a href="mail">비밀번호 찾기</a>
+							</li>
+							<li><a th:href="@{/order-byusername-list}" href="myPage">·
+									주문정보보기</a></li>
+
+						</ul></li>
+
+					<!-- 					<li><a href="#">고객센터▼</a> -->
+					<!-- 						<ul class="top_daph2 top_daph2_2" style="text-align: right;"> -->
+					<!-- 							<li style="margin-left: 145px"><a href="member-sujung-form">회원정보수정</a> -->
+					<!-- 							</li> -->
+
+					<!-- 							<li><a th:href="@{/board-list-view}" href="board-list-view">· -->
+					<!-- 									공지사항</a></li> -->
+					<!-- 							<li><a th:href="@{/myPage-member-detail(id= 60)}" href="myPage">· My Page</a></li> -->
+					<!-- 							<li><a th:href="@{/contactus}" href="contactus">· 맞춤견적</a></li> -->
+					<!-- 							<li><a th:href="@{/qna-list}" href="qna-list-view">· QNA</a></li> -->
+					<!-- 														<li><a th:href="@{/searchid}" href="searchid">· 아이디/비밀번호찾기</a></li> -->
+					<!-- 						</ul></li> -->
+				</ul>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+
+
+</th:block>
+
+
+</html>

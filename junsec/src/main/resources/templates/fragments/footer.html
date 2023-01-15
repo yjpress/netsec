@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<!-- Footer -->
+<th:block th:fragment="footerFragment">
+	<div id="footer" style="margin-top: 30px;">
+		<div class="footer_con_bg">
+			<div class="footer_con">
+				디지탈사업부:서울시 중구 퇴계로 213 (일흥빌딩 306-97) <br />옵셋사업부:경기도 파주시 오도동 1-19<br />
+				<a href="login" style="color: #ffffff">네트프린트</a> | Tel :
+				070-8285-1671 | E-mail : yjpress@hanmail.net
+			</div>
+
+		</div>
+
+	</div>
+
+	<span sec:authorize="isAuthenticated()"> | Logged user: <span
+		sec:authentication="name"></span> | Roles: <span
+		sec:authentication="principal.authorities"></span> | <a
+		th:href="@{/logout}">Sign Out</a>
+	</span>
+
+	
+</th:block>
+
+</html>

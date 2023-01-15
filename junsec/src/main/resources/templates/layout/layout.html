@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<title layout:title-pattern="$LAYOUT_TITLE : $CONTENT_TITLE">netprint33</title>
+<!-- 공통 헤드-->
+<th:block th:replace="fragments/head :: headFragment"></th:block>
+<th:block layout:fragment="css"></th:block>
+<style>
+  .fakeimg {
+    height: 200px;
+    background: #aaa;
+  }
+  </style>
+</head>
+  
+<body id="page-top">
+	<div id="wrapper">
+		<!-- 사이드바-->
+		<div id="content-wrapper" class="d-flex flex-column">
+
+			<div class="container-fluid" id="content">
+				<div class="row">
+					
+					<div class="col-md-12">
+						<th:block th:replace="fragments/header :: headerFragment"></th:block>
+					</div>
+
+					<div class="row">
+
+						<th:block layout:fragment="special-view"></th:block>
+						<th:block layout:fragment="content"></th:block>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<th:block th:replace="fragments/footer :: footerFragment"></th:block>
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+
+	<!-- 공통 스크립트-->
+	<th:block th:replace="fragments/script :: scriptFragment"></th:block>
+
+</body>
+</html>
